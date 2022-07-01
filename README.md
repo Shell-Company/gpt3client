@@ -34,4 +34,4 @@ func main() {
 }
 ```
 
-This will generate a response from the OpenAi GPT-3 API.
+This will generate a response from the OpenAI GPT-3 API.
