@@ -1,3 +1,4 @@
+//Package gpt3client implements OpenAI's GPT3
 package gpt3client
 
 import (
