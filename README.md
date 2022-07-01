@@ -1,5 +1,5 @@
 
-# OpenAi GPT-3 Client
+# OpenAI GPT-3 Client
 
 ## Overview
 
