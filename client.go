@@ -72,6 +72,9 @@ func SendOpenAIPrompt(prompt string) (outputResponse string, newContent string) 
 		panic(err)
 	}
 	defer resp.Body.Close()
+	if resp.StatusCode != 200 {
+		panic(fmt.Sprintf("Status code is %d", resp.StatusCode))
+	}
 
 	responseBody, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
