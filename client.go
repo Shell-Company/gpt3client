@@ -33,10 +33,10 @@ type response struct {
 	} `json:"choices"`
 }
 
-func init(){
+func init() {
 	if apiKey == "" {
 		fmt.Println("Please set API key via OPEN_AI_APIKEY variable")
-		os.Exit(1)	
+		os.Exit(1)
 	}
 }
 
@@ -79,8 +79,10 @@ func SendOpenAIPrompt(prompt string) (outputResponse string, newContent string) 
 	}
 
 	var response response
-	json.Unmarshal(responseBody, &response)
-
+	err = json.Unmarshal(responseBody, &response)
+	if err != nil {
+		panic(err)
+	}
 	outputResponse = prompt
 	for _, choice := range response.Choices {
 		// fmt.Println(choice.Text)
