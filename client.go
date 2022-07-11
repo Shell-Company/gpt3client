@@ -65,6 +65,7 @@ func SendOpenAIPrompt(prompt string) (outputResponse string, newContent string) 
 	}
 
 	req.Header.Add("Content-Type", "application/json")
+	req.Header.Add("User-Agent", "github.com/louisbarrett/gpt3client")
 	req.Header.Add("Authorization", "Bearer "+apiKey)
 
 	resp, err := client.Do(req)
